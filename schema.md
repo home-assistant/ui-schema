@@ -6,6 +6,12 @@ With Home Assistant UI, people can define a user interface to render their entit
 
 Type: `object`
 
+### `name`
+
+Type: `string`
+
+Name of the UI. Shown in the toolbar on top of the UI.
+
 ### `views`
 
 Type: `array` of [`ViewType`](#ViewType).
@@ -16,6 +22,18 @@ A list of defined views. Each view will be rendered in it's own tab.
 
 Type: `object`
 
+### `name`
+
+Type: `string`
+
+Name of the view. Used for the tab of this view if no icon specified.
+
+### `tab_icon`
+
+Type: `string`
+
+Icon to use for the tab.
+
 ### `columnWidth`
 
 Type: `float` specifying the width of the column in pixels.
@@ -23,6 +41,8 @@ Default: leave up to UI?
 Required: no
 
 TODO: Should this be limited to pixels? What about `em`, `%` ?
+
+_Not implemented_
 
 ### `columnCount`
 
@@ -34,9 +54,12 @@ The number of columns for this UI. Can be hardcoded or set to auto. When set to 
 `columnWidth` property combined with the current screen width of the user to decide the number
 of columns.
 
+_Not implemented_
+
 ### `theme`
 
 | Type | `string` |
+| ---- | -------- |
 | Required | no |
 
 The theme to apply to the view component.
@@ -93,3 +116,5 @@ Default: `"default"`
 
 The type of the card to be shown. If the type starts with `custom:`, that is the web component
 tag that will be used.
+
+_Not implemented_
