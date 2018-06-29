@@ -102,7 +102,7 @@ views:
             state: "on"
       - type: entity-filter
         filter:
-          - entity_id "*kitchen*"
+          - entity_id: "*kitchen*"
       - type: entity-filter
         filter:
           - domain: cover
