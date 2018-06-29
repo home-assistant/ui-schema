@@ -185,12 +185,12 @@ views:
         state_image:
           "on": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
         title: state_image.on only, flackack to image
-      - type: picture-entity
-        entity: light.bed_light
-        title: no image
-      - type: picture-entity
-        image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
-        title: no entity
+      # - type: picture-entity
+      #   entity: light.bed_light
+      #   title: no image
+      # - type: picture-entity
+      #   image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+      #   title: no entity
 
   - title: Picture elements
     cards:
