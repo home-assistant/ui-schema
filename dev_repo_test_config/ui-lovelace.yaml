@@ -31,9 +31,9 @@ views:
           - sensor.outside_temperature
           - media_player.lounge_room
 
-  - title: Column and Row
+  - title: Stacks
     cards:
-      - type: column
+      - type: vertical-stack
         cards:
           - type: media-control
             entity: media_player.lounge_room
@@ -43,7 +43,7 @@ views:
             entity: media_player.lounge_room
           - type: camera-preview
             entity: camera.demo_camera
-      - type: row
+      - type: horizontal-stack
         cards:
           - type: media-control
             entity: media_player.lounge_room
