@@ -1,0 +1,190 @@
+title: Lovelace Demo
+views:
+  - title: Home
+    cards:
+      - type: markdown
+        content: >
+          ## Lovelace
+
+          Starting with Home Assistant 0.72, we're experimenting with a new way of defining your interface. We're calling it the **Lovelace UI**.
+
+      - type: picture-glance
+        image: https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=240&w=495
+        title: Picture glance
+        entities:
+          - switch.decorative_lights
+          - light.ceiling_lights
+          - lock.front_door
+          - binary_sensor.movement_backyard
+          - binary_sensor.basement_floor_wet
+
+      - type: weather-forecast
+        entity: weather.demo_weather_north
+      - type: media-control
+        entity: media_player.lounge_room
+      - type: plant-status
+        entity: plant.bonsai
+      - type: history-graph
+        title: history-graph
+        entities:
+          - sensor.outside_temperature
+          - media_player.lounge_room
+
+  - title: Column and Row
+    cards:
+      - type: column
+        cards:
+          - type: media-control
+            entity: media_player.lounge_room
+          - type: camera-preview
+            entity: camera.demo_camera
+          - type: media-control
+            entity: media_player.lounge_room
+          - type: camera-preview
+            entity: camera.demo_camera
+      - type: row
+        cards:
+          - type: media-control
+            entity: media_player.lounge_room
+          - type: camera-preview
+            entity: camera.demo_camera
+
+  - title: Entities
+    cards:
+      - type: entities
+        entities:
+          - device_tracker.demo_paulus
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+      - type: entities
+        entities:
+          - device_tracker.demo_paulus
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - device_tracker.demo_paulus
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+        title: toggle-able
+      - type: entities
+        entities:
+          - device_tracker.demo_paulus
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+        title: toggle-able, toggle = false
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - device_tracker.demo_paulus
+        title: not toggle-able
+      # - type: entities
+      #   title: no entities
+
+
+  - title: Picture entity
+    cards:
+      - type: picture-entity
+        entity: light.bed_light
+        image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+      - type: picture-entity
+        entity: light.bed_light
+        image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+        title: custom title
+      - type: picture-entity
+        entity: light.bed_light
+        state_image:
+          "default": https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+          "off": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+        title: state_image.off + .default
+      - type: picture-entity
+        entity: light.bed_light
+        image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+        state_image:
+          "off": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+        title: state_image.off only
+      - type: picture-entity
+        entity: light.bed_light
+        image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+        state_image:
+          "on": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+        title: state_image.on only
+      - type: picture-entity
+        entity: light.bed_light
+        title: no image
+      - type: picture-entity
+        image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
+        title: no entity
+
+  - title: Picture elements
+    cards:
+      - type: picture-elements
+        image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+        elements:
+          - type: state-badge
+            entity: light.ceiling_lights
+            style:
+              top: 30%
+              left: 55%
+              '--paper-item-icon-color': green
+          - type: state-badge
+            tap_action: toggle
+            entity: light.ceiling_lights
+            style:
+              top: 30%
+              left: 20%
+          - type: service-button
+            title: turn light off
+            style:
+              top: 15%
+              left: 45%
+            service:
+              domain: light
+              service: turn_off
+              data:
+                entity_id: light.ceiling_lights
+          - type: state-text
+            entity: sensor.outside_temperature
+            style:
+              top: 40%
+              left: 30%
+      - type: picture-elements
+        title: title
+        image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+        elements:
+          - type: state-badge
+            entity: light.ceiling_lights
+            style:
+              top: 30%
+              left: 55%
+              '--paper-item-icon-color': green
+          - type: state-badge
+            tap_action: toggle
+            entity: light.ceiling_lights
+            style:
+              top: 30%
+              left: 20%
+          - type: service-button
+            title: turn light off
+            style:
+              top: 15%
+              left: 45%
+            service:
+              domain: light
+              service: turn_off
+              data:
+                entity_id: light.ceiling_lights
+          - type: state-text
+            entity: sensor.outside_temperature
+            style:
+              top: 40%
+              left: 30%
