@@ -178,13 +178,13 @@ views:
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
         state_image:
           "off": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.off only, flackack to image
+        title: state_image.off only, fallback to image
       - type: picture-entity
         entity: light.bed_light
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
         state_image:
           "on": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.on only, flackack to image
+        title: state_image.on only, fallback to image
       # - type: picture-entity
       #   entity: light.bed_light
       #   title: no image
