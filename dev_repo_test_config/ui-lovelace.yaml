@@ -1,6 +1,7 @@
 title: Lovelace Demo
 views:
   - title: Home
+    icon: mdi:heart
     cards:
       - type: markdown
         content: >
@@ -90,6 +91,64 @@ views:
       # - type: entities
       #   title: no entities
 
+  - title: Filter
+    cards:
+      - type: entity-filter
+        filter:
+          - domain: light
+      - type: entity-filter
+        filter:
+          - domain: light
+            state: "on"
+      - type: entity-filter
+        filter:
+          - entity_id "*kitchen*"
+      - type: entity-filter
+        filter:
+          - domain: cover
+          - domain: lock
+      - type: entity-filter
+        filter:
+          - domain: light
+        card:
+          type: glance
+          title: Filter + glance
+
+  - title: Glance
+    cards:
+      - type: glance
+        entities:
+          - device_tracker.demo_paulus
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+      - type: glance
+        entities:
+          - device_tracker.demo_paulus
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+        title: Title
+      - type: glance
+        entities:
+          - entity: device_tracker.demo_paulus
+            title: ¯\_(ツ)_/¯
+          - cover.kitchen_window
+          - group.kitchen
+          - lock.kitchen_door
+          - light.bed_light
+
+  - title: Iframe
+    cards:
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=48.234&lon=8.598&zoom=5&level=surface&overlay=radar&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=48.234&detailLon=8.598&metricWind=default&metricTemp=default&radarRange=-12
+        aspect_ratio: 50%
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=48.234&lon=8.598&zoom=5&level=surface&overlay=radar&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=48.234&detailLon=8.598&metricWind=default&metricTemp=default&radarRange=-12
+        aspect_ratio: 100%
+        title: with title
 
   - title: Picture entity
     cards:
@@ -158,7 +217,7 @@ views:
               top: 40%
               left: 30%
       - type: picture-elements
-        title: title
+        title: with title
         image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
         elements:
           - type: state-badge
