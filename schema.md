@@ -6,11 +6,11 @@ With Home Assistant UI, people can define a user interface to render their entit
 
 Type: `object`
 
-### `name`
+### `title`
 
 Type: `string`
 
-Name of the UI. Shown in the toolbar on top of the UI.
+Title of the UI. Shown in the toolbar on top of the UI.
 
 ### `views`
 
@@ -22,13 +22,13 @@ A list of defined views. Each view will be rendered in it's own tab.
 
 Type: `object`
 
-### `name`
+### `title`
 
 Type: `string`
 
-Name of the view. Used for the tab of this view if no icon specified.
+Title of the view. Used for the tab of this view if no icon specified.
 
-### `tab_icon`
+### `icon`
 
 Type: `string`
 
