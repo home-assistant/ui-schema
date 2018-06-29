@@ -96,17 +96,25 @@ views:
       - type: entity-filter
         filter:
           - domain: light
+        card:
+          title: domain light
       - type: entity-filter
         filter:
           - domain: light
             state: "on"
+        card:
+          title: domain light, state on
       - type: entity-filter
         filter:
           - entity_id: "*kitchen*"
+        card:
+          title: entity_id *kitchen*
       - type: entity-filter
         filter:
           - domain: cover
           - domain: lock
+        card:
+          title: domain cover + lock
       - type: entity-filter
         filter:
           - domain: light
@@ -139,6 +147,7 @@ views:
           - group.kitchen
           - lock.kitchen_door
           - light.bed_light
+        title: Title for Paulus
 
   - title: Iframe
     cards:
@@ -156,9 +165,8 @@ views:
         entity: light.bed_light
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
       - type: picture-entity
-        entity: light.bed_light
+        entity: light.bed_light_xxx
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
-        title: custom title
       - type: picture-entity
         entity: light.bed_light
         state_image:
@@ -170,13 +178,13 @@ views:
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
         state_image:
           "off": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.off only
+        title: state_image.off only, flackack to image
       - type: picture-entity
         entity: light.bed_light
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
         state_image:
           "on": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.on only
+        title: state_image.on only, flackack to image
       - type: picture-entity
         entity: light.bed_light
         title: no image
