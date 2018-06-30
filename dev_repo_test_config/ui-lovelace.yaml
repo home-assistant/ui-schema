@@ -197,29 +197,32 @@ views:
       - type: picture-elements
         image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
         elements:
-          - type: state-badge
-            entity: light.ceiling_lights
-            style:
-              top: 30%
-              left: 55%
-              '--paper-item-icon-color': green
-          - type: state-badge
-            tap_action: toggle
-            entity: light.ceiling_lights
-            style:
-              top: 30%
-              left: 20%
           - type: service-button
             title: turn light off
             style:
               top: 15%
               left: 45%
-            service:
-              domain: light
-              service: turn_off
-              data:
-                entity_id: light.ceiling_lights
-          - type: state-text
+            service: light.turn_off
+            service_data:
+              entity_id: light.ceiling_lights
+          - type: state-badge
+            entity: sensor.outside_temperature
+            style:
+              top: 40%
+              left: 80%
+          - type: state-icon
+            entity: light.ceiling_lights
+            style:
+              top: 30%
+              left: 55%
+              '--paper-item-icon-color': green
+          - type: state-icon
+            tap_action: toggle
+            entity: light.ceiling_lights
+            style:
+              top: 30%
+              left: 20%
+          - type: state-label
             entity: sensor.outside_temperature
             style:
               top: 40%
@@ -228,30 +231,9 @@ views:
         title: with title
         image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
         elements:
-          - type: state-badge
-            entity: light.ceiling_lights
-            style:
-              top: 30%
-              left: 55%
-              '--paper-item-icon-color': green
-          - type: state-badge
+          - type: state-icon
             tap_action: toggle
             entity: light.ceiling_lights
             style:
-              top: 30%
+              top: 0
               left: 20%
-          - type: service-button
-            title: turn light off
-            style:
-              top: 15%
-              left: 45%
-            service:
-              domain: light
-              service: turn_off
-              data:
-                entity_id: light.ceiling_lights
-          - type: state-text
-            entity: sensor.outside_temperature
-            style:
-              top: 40%
-              left: 30%
