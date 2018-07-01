@@ -66,7 +66,7 @@ views:
           - group.kitchen
           - lock.kitchen_door
           - light.bed_light
-        hide_header_toggle: true
+        show_header_toggle: false
       - type: entities
         entities:
           - device_tracker.demo_paulus
@@ -83,7 +83,7 @@ views:
           - lock.kitchen_door
           - light.bed_light
         title: toggle-able, toggle = false
-        hide_header_toggle: true
+        show_header_toggle: false
       - type: entities
         entities:
           - device_tracker.demo_paulus
