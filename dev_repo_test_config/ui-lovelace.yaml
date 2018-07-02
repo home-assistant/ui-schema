@@ -3,6 +3,9 @@ views:
   - title: Home
     icon: mdi:heart
     cards:
+      - type: picture
+        image: https://images.pexels.com/photos/220147/pexels-photo-220147.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500
+        navigation_path: /lovelace/stacks
       - type: markdown
         content: >
           ## Lovelace
@@ -32,6 +35,7 @@ views:
           - media_player.lounge_room
 
   - title: Stacks
+    id: stacks
     cards:
       - type: vertical-stack
         cards:
@@ -94,30 +98,32 @@ views:
   - title: Filter
     cards:
       - type: entity-filter
-        filter:
-          - domain: light
+        entities:
+          - device_tracker.demo_paulus
+          - device_tracker.demo_anne_therese
+          - device_tracker.demo_home_boy
+        state_filter:
+          - "home"
         card:
-          title: domain light
+          type: glance
+          title: People at home
       - type: entity-filter
-        filter:
-          - domain: light
-            state: "on"
+        entities:
+          - light.bed_light
+          - light.ceiling_lights
+          - light.kitchen_lights
+        state_filter:
+            - "on"
         card:
           title: domain light, state on
       - type: entity-filter
-        filter:
-          - entity_id: "*kitchen*"
-        card:
-          title: entity_id *kitchen*
-      - type: entity-filter
-        filter:
-          - domain: cover
-          - domain: lock
-        card:
-          title: domain cover + lock
-      - type: entity-filter
-        filter:
-          - domain: light
+        entities:
+          - light.bed_light
+          - light.ceiling_lights
+          - light.kitchen_lights
+        state_filter:
+          - 'on'
+          - 'off'
         card:
           type: glance
           title: Filter + glance
