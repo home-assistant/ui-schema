@@ -148,12 +148,12 @@ views:
       - type: glance
         entities:
           - entity: device_tracker.demo_paulus
-            title: ¯\_(ツ)_/¯
+            name: ¯\_(ツ)_/¯
           - cover.kitchen_window
           - group.kitchen
           - lock.kitchen_door
           - light.bed_light
-        name: Custom name for Paulus
+        title: Custom name for Paulus
 
   - title: Iframe
     cards:
