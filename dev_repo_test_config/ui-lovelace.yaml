@@ -41,17 +41,17 @@ views:
         cards:
           - type: media-control
             entity: media_player.lounge_room
-          - type: camera-preview
+          - type: picture-entity
             entity: camera.demo_camera
           - type: media-control
             entity: media_player.lounge_room
-          - type: camera-preview
+          - type: picture-entity
             entity: camera.demo_camera
       - type: horizontal-stack
         cards:
           - type: media-control
             entity: media_player.lounge_room
-          - type: camera-preview
+          - type: picture-entity
             entity: camera.demo_camera
 
   - title: Entities
@@ -175,28 +175,27 @@ views:
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
       - type: picture-entity
         entity: light.bed_light
-        state_image:
-          "default": https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
-          "off": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.off + .default
+        image: https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+        tap_action: toggle
+        name: tap_action toggle
       - type: picture-entity
         entity: light.bed_light
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
         state_image:
           "off": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.off only, fallback to image
+        name: state_image.off only, fallback to image
       - type: picture-entity
         entity: light.bed_light
         image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
         state_image:
           "on": https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
-        title: state_image.on only, fallback to image
-      # - type: picture-entity
-      #   entity: light.bed_light
-      #   title: no image
-      # - type: picture-entity
-      #   image: https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=295&w=490
-      #   title: no entity
+        name: state_image.on only, fallback to image
+      - type: picture-entity
+        entity: camera.demo_camera
+      - type: picture-entity
+        entity: light.bed_light
+        camera_image: camera.demo_camera
+        show_info: false
 
   - title: Picture elements
     cards:
@@ -233,8 +232,17 @@ views:
             style:
               top: 40%
               left: 30%
+          - type: navigation
+            path: /lovelace/2
+            icon: mdi:numeric-2-box-multiple-outline
+            style:
+              top: 80%
+              left: 15%
+              width: 48px
+              height: 48px
+              color: cyan
       - type: picture-elements
-        title: with title
+        title: Test overflow
         image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
         elements:
           - type: state-icon
@@ -243,3 +251,20 @@ views:
             style:
               top: 0
               left: 20%
+  - title: panel
+    id: panel
+    panel: true
+    cards:
+      - type: picture-elements
+        image: https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+        elements:
+          - type: service-button
+            title: turn light off
+            style:
+              top: 15%
+              left: 45%
+            service: light.turn_off
+            service_data:
+              entity_id: light.ceiling_lights
+      - type: weather-forecast
+        entity: weather.demo_weather_north
